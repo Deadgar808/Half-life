@@ -71,10 +71,9 @@ describe("Validating halflife top nav", async () => {
     await page.takeScreenshot("screenshots/halflifealyx");
     expect(currentUrl).toBe("https://www.half-life.com/en/alyx");
   });
-  test("Hitting halflife: alyx button", async () => {
+  test("Hitting valve store from halflife site", async () => {
     await page.click(page.visitstore);
     let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/halflifealyx");
     expect(currentUrl).toBe(
       "https://valvestore.forfansbyfans.com/title/half-life.html"
     );
@@ -84,14 +83,14 @@ describe("Validating halflife top nav", async () => {
   });
 });
 
-describe("Testing Valvestore", async () => {
-  test("select black mesa", async () => {
-    await storepage.navigate();
-    await storepage.click(storepage.blackmesa);
-    await storepage.click(storepage.addtocart);
-  });
+// describe("Testing Valvestore", async () => {
+//   test("select black mesa", async () => {
+//     await storepage.navigate();
+//     await storepage.click(storepage.blackmesa);
+//     await storepage.click(storepage.addtocart);
+//   });
 
-  afterAll(async () => {
-    await driver.quit();
-  });
-});
+//   afterAll(async () => {
+//     await driver.quit();
+//   });
+// });

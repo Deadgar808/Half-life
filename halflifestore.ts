@@ -23,38 +23,55 @@ export class halflifestore {
   qtyupdate: By = By.xpath("//a[normalize-space()='Update']");
   qtyremove: By = By.xpath("//a[normalize-space()='Update']");
   continue: By = By.xpath("//a[normalize-space()='Continue']");
-  addtowishlist: By = By.xpath("//a[normalize-space()='Continue']");
-  newwishlistname: By = By.xpath("//input[@id='wishlist_name']");
-  savewishlistname: By = By.xpath("//input[@id='wishlist_name']");
-  wishlistpage: By = By.xpath("//a[@id='wishlist-total']");
-  removewishlistacct: By = By.xpath("//i[@class='icon-account-remove2']");
-  wishlistacctremoveconfirm: By = By.xpath(
-    "//i[@class='icon-account-remove2']"
-  );
-  checkout: By = By.xpath("//a[normalize-space()='CHECKOUT']");
+  // addtowishlist: By = By.xpath("//a[normalize-space()='Continue']");
+  // newwishlistname: By = By.xpath("//input[@id='wishlist_name']");
+  // savewishlistname: By = By.xpath("//input[@id='wishlist_name']");
+  // wishlistpage: By = By.xpath("//a[@id='wishlist-total']");
+  // removewishlistacct: By = By.xpath("//i[@class='icon-account-remove2']");
+  // wishlistacctremoveconfirm: By = By.xpath(
+  //   "//i[@class='icon-account-remove2']"
+  // );
+  // checkout: By = By.xpath("//a[normalize-space()='CHECKOUT']");
 
   guestcheckout: By = By.xpath("//h3[normalize-space()='Guest Checkout']");
-  fName: By = By.xpath("//input[@name='payment_firstname']");
-  lName: By = By.xpath("//input[@name='payment_lastname']");
-  street: By = By.xpath("//input[@name='payment_address_1']");
-  city: By = By.xpath("//input[@name='payment_city']");
-  country: By = By.xpath(
-    "//div[@id='payment-address']//div[@class='content']//div[@class='marginInner']//div[@class='new ']//div[@class='col-lg-24 required']//div[@class='form-group']//div[@class='rowElem jqtransformdone']//div[@class='jqTransformSelectWrapper']//div//span[contains(text(),'- Select Country -')]"
+  guestemail: By = By.xpath(
+    "//div[@class='form-group mb20']//span[@class='placeholderSpan'][normalize-space()='E-Mail Address']"
   );
-  state: By = By.xpath(
-    "//div[contains(@class,'new')]//div[@class='col-lg-12']//div[@class='form-group']//div[@class='rowElem zone_select jqtransformdone']//div[@class='jqTransformSelectWrapper']//div//span[contains(text(),'- Select State/Province -')]"
+  fName: By = By.xpath("input[placeholder='First Name']");
+  lName: By = By.xpath("//input[@placeholder='Last Name']");
+  iagree: By = By.xpath(
+    "//body//div[@id='page']//div[@class='content']//div[@class='content']//div[2]//span[1]//a[1]"
   );
+  ihavereviewed: By = By.xpath("//div[@id='page']//div[3]//span[1]//a[1]");
+  guestcontinue: By = By.xpath("//input[@id='button-guest']");
+  shipfName: By = By.xpath(
+    "//div[@id='payment-address']//span[@class='placeholderSpan'][normalize-space()='First Name']"
+  );
+  shippinglName: By = By.xpath(
+    "//div[@id='payment-address']//span[@class='placeholderSpan'][normalize-space()='Last Name']"
+  );
+  shipstreet: By = By.xpath(
+    "//body/div[@id='page']/div[@class='container mainSection']/div[@class='row']/div[@class='checkoutPage']/div[@class='col-lg-17 col-lg-pull-7']/div[@class='checkout']/div[@class='part-2 active']/div[@class='content']/div[@class='editInfo']/div[@id='new_ui_address']/div[@id='payment-address']/div[@class='content']/div[@class='marginInner']/div[contains(@class,'new')]/div[4]/div[1]/span[1]"
+  );
+  shipcity: By = By.xpath("//input[@name='payment_city']");
+  shipcountry: By = By.xpath("//input[@name='payment_city']");
+  shipstate: By = By.xpath("//a[normalize-space()='Utah']");
   postcode: By = By.xpath("//input[@name='payment_postcode']");
-  phone: By = By.xpath("//input[@name='payment_phone']");
-  nextstep: By = By.xpath("//a[normalize-space()='NEXT STEP']");
+  shipphone: By = By.xpath(
+    "//div[@id='payment-address']//span[@class='placeholderSpan'][normalize-space()='Phone Number']"
+  );
+  shipnextstep: By = By.xpath("//a[normalize-space()='NEXT STEP']");
   shippingmethod: By = By.xpath("//a[@id='button-shipping-method']");
-  paymentsbox: By = By.xpath(
-    "//div[@class='rowElem jqtransformdone']//div[1]//label[1]"
-  );
+  ordertermbox: By = By.xpath("//label[@class='control-label selected']");
   madetoorder: By = By.xpath(
-    "//div[@class='rowElem jqtransformdone']//div[1]//label[2]"
+    "//div[@class='part-4 active']//div[@class='content']//div[2]//label[1]"
   );
-  paymentnextstep: By = By.xpath("//a[@id='button-term']");
+  ordertermnext: By = By.xpath("//a[@id='button-term']");
+  ccnumber: By = By.xpath("//span[normalize-space()='Card number']");
+  ccmonth: By = By.xpath("//span[normalize-space()='Card number']");
+  ccyear: By = By.xpath("//input[@placeholder='Year']");
+  cvv: By = By.xpath("//span[normalize-space()='Security Code']");
+  // placeorder: By = By.xpath("//a[normalize-space()='PLACE ORDER']");
   valvestorelogo: By = By.xpath("//img[@title='Valve Store']");
 
   constructor(driver: WebDriver) {
