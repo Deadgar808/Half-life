@@ -72,25 +72,73 @@ describe("Validating halflife top nav", async () => {
     expect(currentUrl).toBe("https://www.half-life.com/en/alyx");
   });
   test("Hitting valve store from halflife site", async () => {
-    await page.click(page.visitstore);
+    await page.click(storepage.visitstore);
     let currentUrl = await driver.getCurrentUrl();
+    await page.takeScreenshot("screenshots/visitstore");
     expect(currentUrl).toBe(
       "https://valvestore.forfansbyfans.com/title/half-life.html"
     );
   });
+
+  // test("View All", async () => {
+  //   await page.click(storepage.blackmesa);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("viewall");
+  //   expect(currentUrl).toBe(
+  //     "https://valvestore.forfansbyfans.com/half-life/sort/p.date_added.html"
+  //   );
+  // });
+
+  test("Selecting Black Mesa Mask", async () => {
+    await page.click(storepage.blackmesa);
+    let currentUrl = await driver.getCurrentUrl();
+    await page.takeScreenshot("blackmesa");
+    expect(currentUrl).toBe(
+      "https://valvestore.forfansbyfans.com/black-mesa-mask-13518.html"
+    );
+  });
+
+  test("Add to Cart", async () => {
+    await page.click(storepage.addtocart);
+    await page.click(storepage.viewCart);
+    await driver.sleep(2000);
+    await page.click(storepage.checkout);
+    await driver.sleep(2000);
+    await page.click(storepage.guestTab);
+    await driver.sleep(3000);
+    await page.sendKeys(storepage.guestEmail, "myEmail@mail.com");
+    await page.sendKeys(storepage.guestFirstName, "First Name");
+    await page.sendKeys(storepage.guestLastName, "Last Name");
+    await driver.sleep(3000);
+    await page.click(storepage.termsAndConditionsCheckBox);
+    await page.click(storepage.privacyCheckBox);
+    await driver.sleep(5000);
+  });
+
+  // test("", async () => {
+  //   await page.click(storepage.visitstore);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   expect(currentUrl).toBe("");
+  // });
+
+  // test("", async () => {
+  //   await page.click(storepage.visitstore);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   expect(currentUrl).toBe("");
+  // });
+  // afterAll(async () => {
+  //   await driver.quit();
+  // });
+  // });
+
+  // describe("Testing Valvestore", async () => {
+  //   test("select black mesa", async () => {
+  //     await storepage.navigate();
+  //     await storepage.click(storepage.blackmesa);
+  //     await storepage.click(storepage.addtocart);
+  //   });
+
   afterAll(async () => {
     await driver.quit();
   });
 });
-
-// describe("Testing Valvestore", async () => {
-//   test("select black mesa", async () => {
-//     await storepage.navigate();
-//     await storepage.click(storepage.blackmesa);
-//     await storepage.click(storepage.addtocart);
-//   });
-
-//   afterAll(async () => {
-//     await driver.quit();
-//   });
-// });

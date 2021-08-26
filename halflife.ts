@@ -24,6 +24,7 @@ export class halflife {
     "//ul[@class='top_nav']/li[@class='halflife2 ep2']//a[1]"
   );
   halflifealyx: By = By.xpath("//ul[@class='top_nav']/li[@class='alyx']//a[1]");
+  // visitstore: By = By.xpath("//button[@class='buy'])[3]");
   //   By = By.xpath();
   //   By = By.xpath();
   //   By = By.xpath();
