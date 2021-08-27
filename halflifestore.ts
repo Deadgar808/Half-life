@@ -33,22 +33,32 @@ export class halflifestore {
     '(//span[@class="jqTransformCheckboxWrapper"])[4]'
   );
   guestContinue: By = By.xpath("//input[@id='button-guest']");
-  paymentFirstName: By = By.xpath(
-    "//body/div[@id='page']/div[4]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]"
+  paymentFirstName: By = By.name("payment_firstname");
+  paymentLastName: By = By.name("payment_lastname");
+  paymentAddress: By = By.name("payment_address_1");
+  paymentCity: By = By.name("payment_city");
+  paymentSelectCountry: By = By.xpath(
+    "//div[@id='payment-address']//span[contains(text(),'Select Country')]/following-sibling::a"
   );
-  paymentLastName: By = By.xpath(
-    "//body/div[@id='page']/div[4]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]"
+  paymentCountryUSA: By = By.xpath(
+    "//div[@id='payment-address']//a[@index=1 and contains(text(), 'USA')]"
   );
-  paymentAddress: By = By.xpath("");
-  paymentCity: By = By.xpath("");
-  paymentCountryUSA: By = By.xpath("");
-  paymentStateUtah: By = By.xpath("");
-  paymentPostcode: By = By.xpath("");
-  paymentPhone: By = By.xpath("");
-  paymentNextStep: By = By.xpath("");
-  shippingMethod: By = By.xpath("");
-  yourOrderTerms: By = By.xpath("");
-  madeToOrder: By = By.xpath("");
+  paymentSelectState: By = By.xpath(
+    "//div[@id='payment-address']//span[contains(text(),'Select State/Province')]/following-sibling::a"
+  );
+  paymentSelectUtah: By = By.xpath(
+    "//div[@id='payment-address']//a[@index=57 and contains(text(),'Utah')]"
+  );
+  paymentPostcode: By = By.name("payment_postcode");
+  paymentPhone: By = By.name("payment_phone");
+  paymentNextStep: By = By.xpath("//a[@id='button-shipping-address']");
+  shippingMethod: By = By.xpath("//a[@id='button-shipping-method']");
+  yourOrderTerms: By = By.xpath(
+    '(//div[@id="term_info"]//input[@id="term_1"])[1]'
+  );
+  madeToOrder: By = By.xpath(
+    '(//div[@id="term_info"]//input[@id="term_1"])[2]'
+  );
   orderTermsNextStep: By = By.xpath("");
   paymentCCNumber: By = By.xpath("");
   paymentCCMonth: By = By.xpath("");
