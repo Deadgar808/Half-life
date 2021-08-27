@@ -53,17 +53,22 @@ export class halflifestore {
   paymentPhone: By = By.name("payment_phone");
   paymentNextStep: By = By.xpath("//a[@id='button-shipping-address']");
   shippingMethod: By = By.xpath("//a[@id='button-shipping-method']");
+  //yourOrderTerms: By = By.xpath(
+  //
+  //);
   yourOrderTerms: By = By.xpath(
-    '(//div[@id="term_info"]//input[@id="term_1"])[1]'
+    "(//div[@id='term_info']//span[@class='jqTransformCheckboxWrapper'])[1]"
   );
-  madeToOrder: By = By.xpath(
-    '(//div[@id="term_info"]//input[@id="term_1"])[2]'
-  );
-  orderTermsNextStep: By = By.xpath("");
-  paymentCCNumber: By = By.xpath("");
-  paymentCCMonth: By = By.xpath("");
-  paymentCCYear: By = By.xpath("");
-  paymentCCSecurityCode: By = By.xpath("");
+  //madeToOrder: By = By.xpath(
+  //'(//div[@id="term_info"]//input[@id="term_1"])[2]'
+  //);
+  madeToOrder: By = By.xpath("((//label[@class='control-label selected'])[2]");
+  orderTermsNextStep: By = By.xpath("//a[@id='button-term']");
+  paymentCCNumber: By = By.name("cc_number");
+  paymentCCMonth: By = By.name("cc_expire_month");
+  paymentCCYear: By = By.name("cc_expire_year");
+  paymentCCSecurityCode: By = By.name("cc_cvv");
+  paymentPlaceOrder: By = By.name("//a[@id='button-confirm']");
   // qtyadd1: By = By.xpath("//button[normalize-space()='+']");
   // qtyupdate: By = By.xpath("//a[normalize-space()='Update']");
   // qtyremove: By = By.xpath("//a[normalize-space()='Update']");

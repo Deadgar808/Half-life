@@ -29,41 +29,41 @@ describe("Validating halflife top nav", async () => {
     expect(currentUrl).toBe("https://www.half-life.com/en/alyx/");
   });
 
-  test("Hitting halflife home", async () => {
-    await page.navigate();
-    await page.click(page.halfLifeHome);
-    let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/homepage");
-    expect(currentUrl).toBe("https://www.half-life.com/en/home");
-  });
+  // test("Hitting halflife home", async () => {
+  //   await page.navigate();
+  //   await page.click(page.halfLifeHome);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("screenshots/homepage");
+  //   expect(currentUrl).toBe("https://www.half-life.com/en/home");
+  // });
 
-  test("Hitting halflife nav button", async () => {
-    await page.click(page.halfLife);
-    let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/halflife");
-    expect(currentUrl).toBe("https://www.half-life.com/en/halflife");
-  });
+  // test("Hitting halflife nav button", async () => {
+  //   await page.click(page.halfLife);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("screenshots/halflife");
+  //   expect(currentUrl).toBe("https://www.half-life.com/en/halflife");
+  // });
 
-  test("Hitting halflife2 nav button", async () => {
-    await page.click(page.halfLife2);
-    let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/halflife2");
-    expect(currentUrl).toBe("https://www.half-life.com/en/halflife2");
-  });
+  // test("Hitting halflife2 nav button", async () => {
+  //   await page.click(page.halfLife2);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("screenshots/halflife2");
+  //   expect(currentUrl).toBe("https://www.half-life.com/en/halflife2");
+  // });
 
-  test("Hitting episode1 button", async () => {
-    await page.click(page.halfLifeE1);
-    let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/halflifeE1");
-    expect(currentUrl).toBe("https://www.half-life.com/en/episode1");
-  });
+  // test("Hitting episode1 button", async () => {
+  //   await page.click(page.halfLifeE1);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("screenshots/halflifeE1");
+  //   expect(currentUrl).toBe("https://www.half-life.com/en/episode1");
+  // });
 
-  test("Hitting episode2 button", async () => {
-    await page.click(page.halfLifeE2);
-    let currentUrl = await driver.getCurrentUrl();
-    await page.takeScreenshot("screenshots/halflifeE2");
-    expect(currentUrl).toBe("https://www.half-life.com/en/episode2");
-  });
+  // test("Hitting episode2 button", async () => {
+  //   await page.click(page.halfLifeE2);
+  //   let currentUrl = await driver.getCurrentUrl();
+  //   await page.takeScreenshot("screenshots/halflifeE2");
+  //   expect(currentUrl).toBe("https://www.half-life.com/en/episode2");
+  // });
 
   test("Hitting halflife: alyx button", async () => {
     await page.click(page.halfLifeAlyx);
@@ -79,15 +79,6 @@ describe("Validating halflife top nav", async () => {
       "https://valvestore.forfansbyfans.com/title/half-life.html"
     );
   });
-
-  // test("View All", async () => {
-  //   await page.click(storepage.blackmesa);
-  //   let currentUrl = await driver.getCurrentUrl();
-  //   await page.takeScreenshot("viewall");
-  //   expect(currentUrl).toBe(
-  //     "https://valvestore.forfansbyfans.com/half-life/sort/p.date_added.html"
-  //   );
-  // });
 
   test("Selecting Black Mesa Mask", async () => {
     await page.click(storepage.blackMesa);
@@ -128,21 +119,24 @@ describe("Validating halflife top nav", async () => {
     await page.sendKeys(storepage.paymentPostcode, "84119");
     await page.sendKeys(storepage.paymentPhone, "8015556666");
     await page.click(storepage.paymentNextStep);
+    await driver.sleep(2000);
     await page.click(storepage.shippingMethod);
+    await driver.sleep(5000);
     await page.click(storepage.yourOrderTerms);
     await driver.sleep(2000);
     await page.click(storepage.madeToOrder);
-    // await page.click(storepage.orderTermsNextStep);
-    // await page.click(storepage.paymentCCNumber);
-    // await page.sendKeys(storepage.paymentCCNumber, "1234123412341234");
-    // await page.click(storepage.paymentCCMonth);
-    // await page.sendKeys(storepage.paymentCCMonth, "12");
-    // await page.click(storepage.paymentCCYear);
-    // await page.sendKeys(storepage.paymentCCYear, "25");
-    // await page.click(storepage.paymentCCSecurityCode);
-    // await page.sendKeys(storepage.paymentCCSecurityCode, "666");
-
-    await driver.sleep(2000);
+    await driver.sleep(1000);
+    await page.click(storepage.orderTermsNextStep);
+    await page.click(storepage.paymentCCNumber);
+    await page.sendKeys(storepage.paymentCCNumber, "1234123412341234");
+    await page.click(storepage.paymentCCMonth);
+    await page.sendKeys(storepage.paymentCCMonth, "12");
+    await page.click(storepage.paymentCCYear);
+    await page.sendKeys(storepage.paymentCCYear, "25");
+    await page.click(storepage.paymentCCSecurityCode);
+    await page.sendKeys(storepage.paymentCCSecurityCode, "666");
+    await page.click(storepage.paymentPlaceOrder);
+    await driver.sleep(5000);
   });
 
   // test("", async () => {
