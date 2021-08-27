@@ -12,18 +12,18 @@ export class halflife {
 
   //locator for continue button to proceed to correct Half-Life
 
-  halflifehome: By = By.xpath("//ul[@class='top_nav']/li[@class='home']//a[1]");
-  halflife: By = By.xpath("//ul[@class='top_nav']/li[@class='halflife']//a[1]");
-  halflife2: By = By.xpath(
+  halfLifeHome: By = By.xpath("//ul[@class='top_nav']/li[@class='home']//a[1]");
+  halfLife: By = By.xpath("//ul[@class='top_nav']/li[@class='halflife']//a[1]");
+  halfLife2: By = By.xpath(
     "//ul[@class='top_nav']/li[@class='halflife2 hl2']//a[1]"
   );
-  halflifeE1: By = By.xpath(
+  halfLifeE1: By = By.xpath(
     "//ul[@class='top_nav']/li[@class='halflife2 ep1']//a[1]"
   );
-  halflifeE2: By = By.xpath(
+  halfLifeE2: By = By.xpath(
     "//ul[@class='top_nav']/li[@class='halflife2 ep2']//a[1]"
   );
-  halflifealyx: By = By.xpath("//ul[@class='top_nav']/li[@class='alyx']//a[1]");
+  halfLifeAlyx: By = By.xpath("//ul[@class='top_nav']/li[@class='alyx']//a[1]");
   // visitstore: By = By.xpath("//button[@class='buy'])[3]");
   //   By = By.xpath();
   //   By = By.xpath();
@@ -37,9 +37,9 @@ export class halflife {
 
   async navigate() {
     await this.driver.get(this.url);
-    await this.driver.wait(until.elementLocated(this.halflifehome));
+    await this.driver.wait(until.elementLocated(this.halfLifeHome));
     await this.driver.wait(
-      until.elementIsVisible(await this.driver.findElement(this.halflifehome))
+      until.elementIsVisible(await this.driver.findElement(this.halfLifeHome))
     );
   }
 
