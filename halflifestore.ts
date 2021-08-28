@@ -53,27 +53,20 @@ export class halflifestore {
   paymentPhone: By = By.name("payment_phone");
   paymentNextStep: By = By.xpath("//a[@id='button-shipping-address']");
   shippingMethod: By = By.xpath("//a[@id='button-shipping-method']");
-  //yourOrderTerms: By = By.xpath(
-  //
-  //);
-  yourOrderTerms: By = By.xpath(
-    "(//div[@id='term_info']//span[@class='jqTransformCheckboxWrapper'])[1]"
-  );
-  //madeToOrder: By = By.xpath(
-  //'(//div[@id="term_info"]//input[@id="term_1"])[2]'
-  //);
-  madeToOrder: By = By.xpath("((//label[@class='control-label selected'])[2]");
+  yourOrderTerms: By = By.xpath("//label[@class='control-label']')).click()");
+  madeToOrder: By = By.xpath('(//label[@class="control-label"])[1]');
   orderTermsNextStep: By = By.xpath("//a[@id='button-term']");
   paymentCCNumber: By = By.name("cc_number");
-  paymentCCMonth: By = By.name("cc_expire_month");
+  paymentCCMonth: By = By.xpath('//input[@name="cc_expire_month"]');
   paymentCCYear: By = By.name("cc_expire_year");
   paymentCCSecurityCode: By = By.name("cc_cvv");
-  paymentPlaceOrder: By = By.name("//a[@id='button-confirm']");
-  // qtyadd1: By = By.xpath("//button[normalize-space()='+']");
-  // qtyupdate: By = By.xpath("//a[normalize-space()='Update']");
-  // qtyremove: By = By.xpath("//a[normalize-space()='Update']");
-  // placeorder: By = By.xpath("//a[normalize-space()='PLACE ORDER']");
-  // valveLogo: By = By.xpath("//img[@title='Valve Store']");
+  paymentPlaceOrder: By = By.xpath("//a[@id='button-confirm']");
+  //paymentCaptcha: By = By.xpath(
+  //"(//button[@class='close']/following-sibling::h4)[2]"
+  //);
+  paymentError: By = By.xpath("//button[text()='×'])[1]");
+  valveLogo: By = By.xpath("//a[@class='logo']");
+  //valveLogo: By = By.xpath("//a[@aria-label='Valve Store']");
 
   constructor(driver: WebDriver) {
     this.driver = driver;
